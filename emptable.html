@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>employe details</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+
+</head>
+<style>
+    /* table,th,td{
+        border: 1px solid rgb(13, 206, 71);
+        border-collapse: collapse;
+        text-align: center;
+        color:white;
+        font-weight: 800;
+        word-spacing: 5px;
+        text-transform: capitalize;
+         padding: 10px 20px 10px 10px ;
+    } */
+    th,tr,td{
+        text-transform: uppercase;
+         width: 1000px;
+    }
+    .main{
+        margin-left: 100px;
+        margin-top: 20px;
+    } */
+    body{
+        background:url(https://tse4.mm.bing.net/th?id=OIP.1hwagE8r5JZIoxp5FocIQwHaE_&pid=Api&P=0&w=266&h=180) no-repeat;
+        background-size: cover;
+    }
+   tr:nth-child(odd){
+       background-color:blueviolet ;
+   }
+    h1{
+        margin-left: 100px;
+        margin-top: 50px;
+        color: rgb(0, 183, 255);
+    }
+</style>
+<body >
+    <h1>EMPLOYEE'S DETAILS :</h1>
+    <div class="main">
+    <table id="tablesData" >
+        <thead>        <tr>
+            <th>s.no</th>
+            <th>id</th>
+            <th>name</th>
+            <th>gender</th>
+            <th>present address</th>
+            <th>permanent address</th>
+            <th>mobile</th>
+            <th>bank a/c name</th>
+            <th>Active a/c's</th>
+            <th>in-Active a/c's</th>
+        </tr></thead>
+
+                <tbody id="employe" >
+
+        </tbody>
+    </table></div>
+    <!-- <table style="width: 600px;height: 100px;">
+        <tr>
+            <th rowspan="3">name</th>
+            <th rowspan="">gender</th>
+            <th>bank details</th>
+            <th rowspan="2">address</th>
+        </tr>
+        <tr>
+            <td>bank name</td>
+            </tr>
+            <tr>
+            <td></td></tr>
+        </tr>
+    </table> -->
+    <script>
+    // function map() {
+    //     var a=2;
+    //     var b=4;
+    //     return sum=a+b 
+       
+    //   }
+       var employe=[{
+           name:"prasannakumar",
+           id:12345,
+           gender:"male",
+           mobile:9248274823,
+           Bank_acc: [
+                        {
+                     "Bank_name"  : "SBI Bank",
+                     "Account_no" : "20113897522",
+                      "IFSC_code"  : "SBIN0009771",
+                      "date"       : "oct 10, 2021 11:02:05"
+              },
+{
+"Bank_name"  : "co-operative Bank",
+"Account_no" : "621585752225",
+"IFSC_code"  : "SBIN0221455",
+"date"       : "oct 20, 2021 11:02:05"
+},
+{
+"Bank_name"  : "ICICI Bank",
+"Account_no" : "0280025452155",
+"IFSC_code"  : "ICICI02800",
+"date"       : "sep 20, 2021 11:02:05"
+},
+{
+"Bank_name"  : "idfc Bank",
+"Account_no" : "15154221725",
+"IFSC_code"  : "AXIS5331725",
+"date"       : "sep 30, 2021 11:02:05"
+
+}, ],
+           address:{
+             present:"30/14/02 ,Near SpourtSchool, R.T.C Colon, HYDERABAD-53312,telengana",
+             permanent:"21/4/a-3 ,Near highway, R.T. street, rajahmundry-533102,a.p"
+           }
+        },
+           {
+           name:"phani varama",
+           id:12346,
+           gender:"male",
+           mobile:9248871823,
+           Bank_acc : [
+{
+"Bank_name"  : "SBI Bank",
+"Account_no" : "20113897522",
+"IFSC_code"  : "SBIN0009771",
+"date"       : "oct 10, 2021 11:02:05"
+},
+{
+"Bank_name"  : "hdfc Bank",
+"Account_no" : "621585752225",
+"IFSC_code"  : "SBIN0221455",
+"date"       : "oct 02, 2021 11:02:05"
+},
+{
+"Bank_name"  : "union Bank",
+"Account_no" : "0280025452155",
+"IFSC_code"  : "ICICI02800",
+"date"       : "oct 20, 2021 11:02:05"
+},
+{
+"Bank_name"  : "yes Bank",
+"Account_no" : "15154221725",
+"IFSC_code"  : "AXIS5331725",
+"date"       : "sep 20, 2021 11:02:05"
+}, ],
+           address:{
+             present:"11/01/01, Near suziki showroom,T.C Colony, HYDERABAD-533125,telengana",
+             permanent:"31/11/a1, Near krishna temple, aswaraopeta-533025,telengana"
+           }
+           
+           },{
+           name:"harish",
+           id:12347,
+           gender:"male",
+           mobile:9288175823,
+           Bank_acc : [
+{
+"Bank_name"  : "boroda Bank",
+"Account_no" : "20113897522",
+"IFSC_code"  : "SBIN0009771",
+"date"       : "oct 02, 2021 11:02:05"
+},
+{
+"Bank_name"  : "kotak Bank",
+"Account_no" : "621585752225",
+"IFSC_code"  : "SBIN0221455",
+"date"       : "oct 20, 2021 11:02:05"
+},
+{
+"Bank_name"  : "karnataka Bank",
+"Account_no" : "0280025452155",
+"IFSC_code"  : "ICICI02800",
+"date"       : "sep 29, 2021 11:02:05"
+},
+{
+"Bank_name"  : "bandhan Bank",
+"Account_no" : "15154221725",
+"IFSC_code"  : "AXIS5331725",
+"date"       : "sep 20, 2021 11:02:05"
+}, ],
+        address:{
+             present:"10/41/21, Near big-c,R.TColony, HYDERABAD-533125,telengana",
+             permanent:"10/4/7-5,c.TColony, kakinada-533101,ap"
+            
+           }
+           },{
+           name:"mani",
+           id:12348,
+           gender:"ale",
+           mobile:9241284323,
+           Bank_acc : [
+{
+"Bank_name"  : "SBI Bank",
+"Account_no" : "20113897522",
+"IFSC_code"  : "SBIN0009771",
+"date"       : "oct 02, 2021 11:02:05"
+},
+{
+"Bank_name"  : "SBH Bank",
+"Account_no" : "621585752225",
+"IFSC_code"  : "SBIN0221455",
+"date"       : "oct 20, 2021 11:02:05"
+},
+{
+"Bank_name"  : "ICICI Bank",
+"Account_no" : "0280025452155",
+"IFSC_code"  : "ICICI02800",
+"date"       : "oct 28, 2021 11:02:05"
+},
+{
+"Bank_name"  : "inidan Bank",
+"Account_no" : "15154221725",
+"IFSC_code"  : "AXIS5331725",
+"date"       : "sep 31, 2021 11:02:05"
+},
+{
+    "Bank_name"  : "inido Bank",
+"Account_no" : "15154221725",
+"IFSC_code"  : "AXIS5331725",
+"date"       : "sep 31, 2021 11:02:05"
+
+} ],
+                       address:{
+             present:"35/04/58, Near Spourt School,R.C Colony, HYDERABAD-533125,telengana",
+             permanent:"20/4/04-58, Near high School,R.C Colony, vijayawada-533102,a.p"
+            
+           }
+           }
+        ];
+        //var emp0=[];var emp2={};var emp3={};var emp4={};var emp5={};
+       // var employe_reduce=employe.reduce((pre,cur)=>{
+       // debugger         
+       var temp=[];  
+        for(i=0;i<employe.length;i++){
+            
+            var emp1=[];var emp2=[];var emp3=[]; 
+            
+            // emp0+=employe[i].name + " , ";
+            // emp2["id"]=employe[i].id;
+            // emp3["gender"+1]=employe[i].gender;
+            // emp4["address"+i]=employe[i].address.present;
+            // emp5["mobile"+i]=employe[i].mobile;
+            // // console.log(employe[i].Bank_acc.length)
+            // //debugger
+            for(j=0;j<employe[i].Bank_acc.length;j++){
+                console.log(employe[i].Bank_acc[j].Bank_name)
+                console.log(employe[i].Bank_acc[j].Account_no)
+
+                var bankName=employe[i].Bank_acc[j].Bank_name;
+                var account=employe[i].Bank_acc[j].Account_no;
+                emp1.push(bankName,account);
+
+                var date1=new Date();
+//console.log(x.last_date);
+//var date2=parseInt(new date("update"));console.log(date2);
+var date2=new Date(employe[i].Bank_acc[j].date);
+var result=Math.abs(date1-date2)/1000;
+console.log(result);
+var days=Math.floor(result/86400);
+console.log(days);
+
+if(days<=30){
+    //var troll=x.Bank_name
+//console.log("active account",bankName); 
+    emp2.push(bankName);
+}
+else{
+      emp3.push(bankName);
+   console.log("In active account",emp3)
+}
+//emp["bank"+i]=employe[i].Bank_acc[j].Bank_name;
+            // emp1 +=employe[i].Bank_acc[j].Bank_name +"  " ;
+            }
+            var allEmployes=document.getElementById("employe");
+var row = `<tr>
+  <td>${i+1}</td>
+  <td>${employe[i].id}</td>
+ <td>${employe[i].name}</td>
+  <td>${employe[i].gender}</td>
+  <td>${employe[i].address.present}</td>
+  <td>${employe[i].address.permanent}</td>
+  <td>${employe[i].mobile}</td>
+  <td>${emp1}</td>
+  <td>${emp2}</td>
+  <td>${emp3}</td>
+   </tr>`
+allEmployes.innerHTML+=row;
+     }
+     $(document).ready(function(){
+         $("#tablesData").dataTable();
+     })
+
+        
+        
+
+
+//         var bank_emp={};
+//       //var bank_id=  temp.reduce((pre,cur)=>{
+//              // debugger
+//                 for(i=0;i<temp.length;i++){
+//                          bank_emp["bank_name"+i]=temp[i];
+//                  // return bank_emp;
+//                 }
+//        // },{}) ;
+//         console.log(bank_emp)
+//         //console.log(temp);
+//        var employe_all=[];
+//          employe_all.push(emp0,emp2,emp3,emp4,emp5, temp);
+//          console.log(employe_all);
+// //     //temp.forEach(z=>{
+//      for(a=0;a<employe_all.length;i++){
+//         var allEmployes=document.getElementById("employe");
+// var row = `<tr>
+
+//    <td>${employe.getIndex+1}</td>
+//    <td>${employe_all[a].id0}</td>
+//   <td>${employe_all[a].name0}</td>
+//    <td>${employe_all[a].gender0}</td>
+//    <td>${employe_all[a].address0}</td>
+//    <td>${employe_all[a].mobile0}</td>
+//   <td>${employe_all[a].bank_name0}</td>
+//    <td></td>
+//    <td></td>
+// </tr>`
+// allEmployes.innerHTML+=row;
+//       }
+   // })
+ 
+
+
+       // })
+      //console.log(emp.address)
+    
+//         var emp = [ {
+// "name" : "Phani Varma",
+// "email" : "phanivarma8081@gmail.com",
+// "mobile_no" :  9703232026,
+// "gender" : "male",
+// "Bank_acc" : [
+// {
+// "Bank_name"  : "SBI Bank",
+// "Account_no" : "20113897522",
+// "IFSC code"  : "SBIN0009771"
+// },
+// {
+// "Bank_name"  : "SBH Bank",
+// "Account_no" : "621585752225",
+// "IFSC code"  : "SBIN0221455"
+// },
+// {
+// "Bank_name"  : "ICICI Bank",
+// "Account_no" : "0280025452155",
+// "IFSC code"  : "ICICI02800"
+// },
+// {
+// "Bank_name"  : "AXIS Bank",
+// "Account_no" : "15154221725",
+// "IFSC code"  : "AXIS5331725"
+// }, ],
+// "Address" : {
+
+// "Present_address" : {
+
+// "Door_no" : "19-129",
+// "Street_no" : "22",
+// "Colony"    : "RTC colony",
+// "City"      : "Hyd",
+// "Pincode"   : "500049"
+// },
+// "Prement_address" : {
+
+// "Door_no" : "19-37/A",
+// "Street_no" : "01",
+// "Colony"    : "Ralula colony",
+// "City"      : "I.S.Raghavapuram",
+// "Pincode"   : "534451"
+// }, }}];
+//console.log(emp);
+//console.log(emp[0].Bank_acc);
+//var bank=emp.filter(x=>x.Bank_acc="AXIS Bank");console.log(bank)
+   // var bank={};bank["names"]=emp[0].Bank_acc[1].Bank_name;console.log(bank)
+   // bank["names"]=emp[0].Bank_acc[0].Account_no;console.log(bank)
+
+               //console.log(typeof(emp[0].name));
+
+// emp.forEach(x=>{
+// var emplyee = document.getElementById("details");
+
+
+// var row = `<tr>
+// <td>${x.name}</td>
+// <td>${x.email}</td>
+// <td></td>
+// <td></td>
+// </tr>`
+// emplyee.innerHTML=+ row;
+// }
+// )
+    //  employe.forEach(x=>{
+
+    //        var allEmployes=document.getElementById("employe");
+    //        var row = `<tr>
+    //          <td></td>
+    //          <td>${x.id}</td>
+    //          <td>${x.name}</td>
+    //         <td>${x.gender}</td>
+    //          <td>${x.address.present.city}</td>
+    //          <td>${x.mobile}</td>
+    //          <td>${x.bank}</td>
+    //           </tr>`
+    //   allEmployes.innerHTML+=row;
+    //    });
+
+
+//       var emp = [ {
+// "name" : "Phani Varma",
+//  "email" : "phanivarma8081@gmail.com",
+//  "mobile_no" :  9703232026,
+//  "gender" : "male",
+//  "Bank_acc" : [
+//  {
+//  "Bank_name"  : "SBI Bank",
+//  "Account_no" : "20113897522",
+//  "IFSC_code"  : "SBIN0009771",
+//  "date"       : "sep 20, 2021 11:02:05" 
+//  },
+//  {
+//  "Bank_name"  : "SBH Bank",
+//  "Account_no" : "621585752225",
+//  "IFSC_code"  : "SBIN0221455",
+//  "date"       : "oct 20, 2021 11:02:05" 
+//  },
+//  {
+//  "Bank_name"  : "ICICI Bank",
+//  "Account_no" : "0280025452155",
+//  "IFSC_code"  : "ICICI02800",
+//  "date"       : "oct 03, 2021 11:02:05" 
+//  },
+//  {
+//  "Bank_name"  : "AXIS Bank",
+//  "Account_no" : "15154221725",
+//  "IFSC_code"  : "AXIS5331725",
+//  "date"       : "oct 25, 2021 11:02:05" 
+//  }, ],
+//  "Address" : [{
+
+//  "Present_address" : {
+//  "Door_no" : "19-129",
+//  "Street_no" : "22",
+//  "Colony"    : "RTC colony",
+//  "City"      : "Hyd",
+//  "Pincode"   : "500049"
+//  },
+//  "Prement_address" : {
+//  "Door_no" : "19-37/A",
+//  "Street_no" : "01",
+//  "Colony"    : "Ralula colony",
+//  "City"      : "I.S.Raghavapuram",
+//  "Pincode"   : "534451"
+//  }, }]}];
+    //   employe.forEach(y=>{
+    //     console.log(employe.length);
+    //      temp.forEach(x=>{
+    //          //y.Address.forEach(z=>{
+        
+//console.log(emp[0].Bank_acc[0].ban)
+//};
+//}) 
+//})
+//}
+// bank active inactive
+// var active=[];var inActive=[];
+// for(i=0;i<employe.length;i++){
+//    // for(j=0;j<Bank_acc.length;j++ ){}
+//    employe[i].Bank_acc.forEach(x=>{
+ //date="sep 20, 2021 11:02:05";
+//function fun(){
+    //var update=document.getElementById("create").value;
+    //console.log(update);console.log(new date())
+
+// var date1=new Date();
+// //console.log(x.last_date);
+// //var date2=parseInt(new date("update"));console.log(date2);
+// var date2=new Date(x.date);
+// var result=Math.abs(date1-date2)/1000;
+// console.log(result);
+// var days=Math.floor(result/86400);
+// console.log(days);
+
+// if(days<=30){
+//     var troll=x.Bank_name
+// console.log("active account",troll); 
+//     active.push(x.Bank_name);
+// }
+// else{
+//       inActive.push(x.Bank_name);
+//     console.log("In active account",x.Bank_name)
+// }
+// })
+// }
+// // console.log("IN ACTIVE BANKS :- " ,inActive);
+// // console.log(" ACTIVE BANKS :-",active);
+
+     </script>
+</body>
+</html>

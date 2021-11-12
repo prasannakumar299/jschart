@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="table">
+    <h1>ANAND DAILY SCHEDULE</h1>
+    <label>Name</label><br>
+    <input type="text" id="name" placeholder="NAME">
+    <label>Time</label>
+    <input type="text" id="time" placeholder="hr's"><br>
+     <p id="msg"></p>
+    <button type="button" onclick="btn()">CHECK</button>
+</div>
+    <script>
+        //let x=document.getElementById("form").value;
+      //  console.log(x,typeof x);//
+        //number with all operations
+        var x=3;
+        var y=4;
+        var z=6; 
+        console.log(x+y+z);
+        console.log(x-y);
+//covertion string to number by using parse(int & float)-(type casting)
+        var a="6";
+        var b=20;
+        var c="101.25";
+        console.log(parseFloat(c)+b)
+        console.log(parseInt(a)+b,typeof a);
+        console.log(typeof a);
+
+        
+        var a=6;
+        var b=9;
+        console.log(a-b);
+        var a=2;
+        var b=4;
+        console.log(a/b);
+        var u=.68;
+        var v=.99;
+        console.log(a*b);
+        var d=22;
+        var s=11;
+        var p=1;
+        console.log(d/s);
+        console.log(d>s);
+        console.log(d-s);
+        console.log(d>s>p);
+        console.log(d<s<p);
+        console.log(d<s>p);
+        console.log(d && s);
+        console.log(d != s);
+        console.log(null*d,null/d,s/null,s%null);
+        console.log(++d);
+    
+        //array,sting with all operations
+        
+        var x=["ravi ram sun"];
+        var y=["ravi ram sun"];
+        console.log(x+y);
+        console.log(x-y,x*y,x/y,x%y);
+        console.log(x&&y,x||y,x!=y);
+        console.log(x>y,x<y);
+        console.log(null+x);
+
+        var x=["ravi ram sun"];
+        var y=["rave ram sun"];
+        console.log(x>y,x<y);
+        console.log(x==y);
+
+
+        var x=["ravi, ram, son"];
+        var y=["ravi ram sun"];
+        console.log(x>y,x<y); 
+        var x=["ravi","ram","sun"];
+        var y=["10ravali ram sun"];
+        console.log(y>x);
+        console.log(`Value:${x} Type:${typeof (x)}`);
+        console.log(x.length,x[1]);
+        console.log(x[0]);
+
+        var x="10th generation,boy33252";
+        console.log(`Value:${x} Type:${typeof x}`,x.length);
+        
+        
+        // for (i=0;i<2;i++){
+            // console.log(y[i]==x[i]);
+        //  }
+        // console.log(JSON.stringify(x) != JSON.stringify(y));
+        var u="cherry"
+        var v="smily"
+        var w="ram"
+        console.log(u>v<w);
+
+        var admin="name";
+        var name="john";
+        console.log( admin && name );
+
+        var b="live";
+        var c="scroll";
+        console.log(b+c,b-c);
+        console.log(b>c,b<c,b>=c,b<=c);
+        console.log(b^c);
+         
+        let message=``;
+        const nani=true;
+        var prasanna=true;
+        let anand=false;
+        if(nani && prasanna)
+        {
+                message=`friend`;
+        }
+
+        else if(nani||anand) 
+        {
+            message=`best friends`;
+        }
+        else
+        {
+            message=`good luck`;
+        }
+        console.log(message);
+
+
+       function btn()
+                         {
+           
+                            var x=document.getElementById("name").value;
+
+                            var y=document.getElementById("time").value;
+
+               if(x =="harish")
+                         {
+               if(y==0||y==""||null)
+                         {
+                            document.getElementById("msg").innerHTML="please enter the value";
+                         }
+               else if(y<0 && y>=8)
+                         {
+                            document.getElementById("msg").innerHTML="iam at bed";
+                         }
+               else if(y<9 && y>=11)
+                         {
+                            document.getElementById("msg").innerHTML="iam at tiffin center";
+                         }
+               else if(y<12 && y>=15)
+                         {
+                            document.getElementById("msg").innerHTML="iam at hotel";
+                         }
+                        }
+                if(x=="anand"||"ANAND") 
+                         {
+               if(y==0||y=="")
+                         {
+                            document.getElementById("msg").innerHTML="please enter the value";
+                         }
+               else if(y<0 && y<=1)
+                         {
+                            document.getElementById("msg").innerHTML="iam at tiffin center";
+                         }
+               else if(y>=9 && y<=13)
+                         {
+                            document.getElementById("msg").innerHTML="anand at hotel";
+                         }
+                        }
+      
+                  else
+                        {
+                            document.getElementById("msg").innerHTML="person not in list";
+
+                       }
+                       }
+    
+        var name='john';
+        var admin='admin'
+     
+     </script>
+</body>
+</html>
